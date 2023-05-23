@@ -1,0 +1,7 @@
+.date{
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    border: solid 2px rgb(61, 61, 222);
+    background-color: rgb(167, 199, 228);
+}

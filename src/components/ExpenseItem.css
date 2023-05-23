@@ -1,0 +1,13 @@
+.expense_item{
+    padding: 5px;
+    display:flex; 
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.expense_item.delete{
+    
+
+}
