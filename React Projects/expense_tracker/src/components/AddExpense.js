@@ -39,7 +39,7 @@ export default function AddExpense(props){
         <div class="text-right">
         <input class="btn btn-primary" type="submit" value="Add" />
         <span class="p-2"></span>
-        <input class="btn btn-danger" type="button" value="Delete" />
+        <input class="btn btn-warning" type="reset" value="Reset" onClick={(e)=>{setTitle('');setDate('');setAmount('');}} />
         </div>
         
         </form>

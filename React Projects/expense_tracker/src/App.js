@@ -1,21 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
 import AddExpense from './components/AddExpense';
 import ExpenseItemList from './components/ExpenseItemList';
 import { useState } from 'react';
 
 function App() {
-  const [data , setData] = useState([ {
-    "title" : "Groceries",
-    "on" : "05/21/2023",
-    "amount" : "1000"
-  }]);
+  const [data , setData] = useState([]);
   
-
-  
+  function spliceNoMutate(myArray,indexToRemove) {
+    return myArray.slice(0,indexToRemove).concat(myArray.slice(indexToRemove+1));
+}
+  const handleDelete = (index)=>{
+    var data1 = data;
+    if(data1.length!=1){
+      data1 = spliceNoMutate(data1,index);
+      setData(data1);
+  }
+    else
+    {
+    setData([]);
+    }
+    console.log("Delete");
+  }
 
   const handleAddExpense = (info)=>{
-    data.push();
     setData([...data,{
       "title" :  info.title,
       "on" : info.on,
@@ -28,7 +36,7 @@ function App() {
     
     <div className="App">
       <AddExpense updateExpenseData={handleAddExpense}/>
-      <ExpenseItemList data = {data} />
+      <ExpenseItemList data={data} handleDelete={handleDelete}/>
     </div>
   );
 }
