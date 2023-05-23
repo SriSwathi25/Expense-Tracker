@@ -4,6 +4,7 @@ export default function AddExpense(props){
     const [title, setTitle] = useState('');
     const [date, setDate] = useState('');
     const [amount, setAmount] = useState('');
+    
     return(
         <div class="w-50 m-auto p-5 jumbotron form-group">
         <p class="text-center">Add Expense Item</p>
@@ -11,7 +12,7 @@ export default function AddExpense(props){
             event.preventDefault();
             const data = {
                 "title" : event.target.title.value,
-                "on" : event.target.date.value,
+                "on" : new Date(event.target.date.value),
                 "amount" : event.target.amount.value
             }
             console.log(data);
