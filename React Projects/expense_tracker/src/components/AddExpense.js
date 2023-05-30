@@ -30,12 +30,12 @@ export default function AddExpense(props){
         On
         </label>
         <br/>
-        <input class="form-control" name="date" type="date" value={date} onChange={(e)=>setDate(e.target.value)} />
+        <input class="form-control" name="date" type="date" min="2019-01-01" max="2023-06-01" value={date} onChange={(e)=>setDate(e.target.value)} />
         <br/>
         <label for="Amount">
         Amount
         </label>
-        <input class="form-control" name="amount" type="number" value={amount} onChange={(e)=>setAmount(e.target.value)} />
+        <input class="form-control" name="amount" type="number" min="0.01" step="0.01" value={amount} onChange={(e)=>setAmount(e.target.value)} />
         <br />
         <div class="text-right">
         <input class="btn btn-primary" type="submit" value="Add" />
