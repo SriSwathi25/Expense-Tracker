@@ -1,6 +1,7 @@
 import ExpenseItem from "./ExpenseItem";
 import Card from "./Card";
 import { useState } from "react";
+import ExpensesChart from "./ExpensesChart";
 
 export default function ExpenseItemList(props){    
     
@@ -24,8 +25,10 @@ export default function ExpenseItemList(props){
             <option>2022</option>
             <option>2023</option>
         </select>
-        </span>{
-            filterYear == "All" ? 
+        </span>
+        <ExpensesChart data = {filteredExpenses} />
+        {
+            filterYear === "All" ? 
             props.data.map((d,i)=>(<ExpenseItem key={i} index={i} title={d.title}  on={d.on}  month={d.on.toLocaleString('en-US', { month: 'long' })} day={d.on.toLocaleString('en-US', { day: '2-digit' })} year={d.on.getFullYear()}  amount={d.amount} handleDelete={props.handleDelete} />)) : 
         
             filteredExpenses.map((d,i)=>(<ExpenseItem key={i} index={i} title={d.title}  on={d.on}  month={d.on.toLocaleString('en-US', { month: 'long' })} day={d.on.toLocaleString('en-US', { day: '2-digit' })} year={d.on.getFullYear()}  amount={d.amount} handleDelete={props.handleDelete} />))}

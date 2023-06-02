@@ -11,9 +11,9 @@ export default function AddExpense(props){
         <form onSubmit={(event)=>{
             event.preventDefault();
             const data = {
-                "title" : event.target.title.value,
-                "on" : new Date(event.target.date.value),
-                "amount" : event.target.amount.value
+                "title" : title,
+                "on" : new Date(date),
+                "amount" : +amount
             }
             console.log(data);
             props.updateExpenseData(data);
